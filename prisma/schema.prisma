@@ -9,3 +9,294 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model AmericanKennelClub {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  breed         Breed[]
+}
+
+model AustralianNationalKennelCouncil {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  breed         Breed[]
+}
+
+model Body {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model BreedColor {
+  breed   Breed @relation(fields: [breedId], references: [id])
+  breedId Int
+  color   Color @relation(fields: [colorId], references: [id])
+  colorId Int
+
+  @@id([breedId, colorId])
+  @@unique([breedId, colorId])
+}
+
+model BreedEye {
+  breed   Breed @relation(fields: [breedId], references: [id])
+  breedId Int
+  eye     Eye   @relation(fields: [eyeId], references: [id])
+  eyeId   Int
+
+  @@id([breedId, eyeId])
+  @@unique([breedId, eyeId])
+}
+
+model BreedPattern {
+  breed     Breed   @relation(fields: [breedId], references: [id])
+  breedId   Int
+  pattern   Pattern @relation(fields: [patternId], references: [id])
+  patternId Int
+
+  @@id([breedId, patternId])
+  @@unique([breedId, patternId])
+}
+
+model Breed {
+  id                                             Int                                  @id @default(autoincrement())
+  nameEn                                         String                               @unique
+  nameJa                                         String                               @unique
+  kana                                           String?
+  descriptionEn                                  String?
+  descriptionJa                                  String?
+  historyJa                                      String?
+  historyEn                                      String?
+  featuresJa                                     String?
+  featuresEn                                     String?
+  traitsJa                                       String?
+  traitsEn                                       String?
+  healthJa                                       String?
+  healthEn                                       String?
+  notesJa                                        String?
+  notesEn                                        String?
+  originJa                                       String?
+  originEn                                       String?
+  minWeight                                      Float?
+  maxWeight                                      Float?
+  minHeight                                      Float?
+  maxHeight                                      Float?
+  size                                           Size?                                @relation(fields: [sizeId], references: [id])
+  sizeId                                         Int?
+  country                                        Country?                             @relation(fields: [countryId], references: [id])
+  countryId                                      Int?
+  role                                           Role?                                @relation(fields: [roleId], references: [id])
+  roleId                                         Int?
+  ear                                            Ear?                                 @relation(fields: [earId], references: [id])
+  earId                                          Int?
+  tail                                           Tail?                                @relation(fields: [tailId], references: [id])
+  tailId                                         Int?
+  body                                           Body?                                @relation(fields: [bodyId], references: [id])
+  bodyId                                         Int?
+  head                                           Head?                                @relation(fields: [headId], references: [id])
+  headId                                         Int?
+  leg                                            Leg?                                 @relation(fields: [legId], references: [id])
+  legId                                          Int?
+  status                                         Status?                              @relation(fields: [statusId], references: [id])
+  statusId                                       Int?
+  coat                                           Coat?                                @relation(fields: [coatId], references: [id])
+  coatId                                         Int?
+  canadianKennelClub                             CanadianKennelClub?                  @relation(fields: [canadianKennelClubId], references: [id])
+  canadianKennelClubId                           Int?
+  americanKennelClub                             AmericanKennelClub?                  @relation(fields: [americanKennelClubId], references: [id])
+  americanKennelClubId                           Int?
+  australianNationalKennelCouncil                AustralianNationalKennelCouncil?     @relation(fields: [australianNationalKennelCouncilId], references: [id])
+  australianNationalKennelCouncilId              Int?
+  newZealandKennelClub                           NewZealandKennelClub?                @relation(fields: [newZealandKennelClubId], references: [id])
+  newZealandKennelClubId                         Int?
+  unitedKennelClub                               UnitedKennelClub?                    @relation(fields: [unitedKennelClubId], references: [id])
+  unitedKennelClubId                             Int?
+  theKennelClub                                  TheKennelClub?                       @relation(fields: [theKennelClubId], references: [id])
+  theKennelClubId                                Int?
+  federationCynologiqueInternationale            FederationCynologiqueInternationale? @relation(fields: [federationCynologiqueInternationaleId], references: [id])
+  federationCynologiqueInternationaleId          Int?
+  federationCynologiqueInternationaleProvisional String?
+  federationCynologiqueInternationaleNumber      String?
+  isHumanReviewed                                Boolean                              @default(false)
+  colors                                         BreedColor[]
+  eyes                                           BreedEye[]
+  patterns                                       BreedPattern[]
+}
+
+model CanadianKennelClub {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  breed         Breed[]
+}
+
+model Coat {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model Color {
+  id            Int          @id @default(autoincrement())
+  nameEn        String       @unique
+  nameJa        String       @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String       @unique
+  Breeds        BreedColor[]
+}
+
+model Country {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  parentId      Int?
+  breed         Breed[]
+}
+
+model Ear {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model Eye {
+  id            Int        @id @default(autoincrement())
+  nameEn        String     @unique
+  nameJa        String     @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String     @unique
+  Breeds        BreedEye[]
+}
+
+model FederationCynologiqueInternationale {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  parentId      Int?
+  breed         Breed[]
+}
+
+model Head {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model Leg {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model NewZealandKennelClub {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  breed         Breed[]
+}
+
+model Pattern {
+  id            Int            @id @default(autoincrement())
+  nameEn        String         @unique
+  nameJa        String         @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String         @unique
+  Breeds        BreedPattern[]
+}
+
+model Role {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  parentId      Int?
+  breed         Breed[]
+}
+
+model Size {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model Status {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model Tail {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  slug          String  @unique
+  breed         Breed[]
+}
+
+model TheKennelClub {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  breed         Breed[]
+}
+
+model UnitedKennelClub {
+  id            Int     @id @default(autoincrement())
+  nameEn        String  @unique
+  nameJa        String  @unique
+  descriptionEn String?
+  descriptionJa String?
+  breed         Breed[]
+}
