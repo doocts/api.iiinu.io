@@ -6,10 +6,15 @@ import {
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(
-    AppModule,
-    new FastifyAdapter(),
-  );
-  await app.listen(3000, '0.0.0.0');
+  try {
+    const app = await NestFactory.create<NestFastifyApplication>(
+      AppModule,
+      new FastifyAdapter(),
+    );
+    await app.listen(3000, '0.0.0.0');
+  } catch (error) {
+    console.error('Error during bootstrap:', error);
+    process.exit(1);
+  }
 }
 bootstrap();

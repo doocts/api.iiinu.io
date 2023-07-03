@@ -5,4 +5,6 @@ COPY package.json yarn.lock ./
 RUN yarn install --prod --frozen-lockfile
 
 COPY . .
+RUN npx prisma generate
+
 CMD ["yarn", "start"]
