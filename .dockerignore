@@ -1,8 +1,10 @@
 node_modules
 Dockerfile
 docker-compose.yml
-#.env
+.env
 README.md
 .git
 .gitignore
 .dockerignore
+npm-debug.log
+dist

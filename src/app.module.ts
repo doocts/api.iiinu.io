@@ -49,7 +49,7 @@ import { UnitedKennelClubResolver } from './unitedKennelClub/unitedKennelClub.re
   imports: [
     GraphQLModule.forRoot<MercuriusDriverConfig>({
       driver: MercuriusDriver,
-      graphiql: process.env.NODE_ENV !== 'production',
+      graphiql: true,
       autoSchemaFile: true,
       sortSchema: true,
     }),

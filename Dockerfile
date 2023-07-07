@@ -1,10 +1,28 @@
+FROM node:18-alpine3.16 AS builder
+WORKDIR /api
+
+COPY package.json ./
+COPY yarn.lock ./
+COPY prisma ./prisma/
+RUN yarn install --frozen-lockfile
+
+COPY . .
+
+RUN npx prisma generate
+
+ENV NODE_ENV=production
+RUN yarn build
+
 FROM node:18-alpine3.16
 WORKDIR /api
 
-COPY package.json yarn.lock ./
+COPY package.json ./
+COPY yarn.lock ./
+COPY prisma ./prisma/
 RUN yarn install --prod --frozen-lockfile
 
-COPY . .
-RUN npx prisma generate
+COPY --from=builder /api/dist ./dist
 
-CMD ["yarn", "start"]
+EXPOSE 3000
+
+CMD ["node", "dist/src/main.js"]
