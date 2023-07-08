@@ -1,20 +1,24 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { AustralianNationalKennelCouncilService } from './australianNationalKennelCouncil.service';
 import { AustralianNationalKennelCouncil } from './australianNationalKennelCouncil.entity';
 
 @Resolver(() => AustralianNationalKennelCouncil)
 export class AustralianNationalKennelCouncilResolver {
   constructor(
-    private readonly ankcService: AustralianNationalKennelCouncilService,
+    private readonly australianNationalKennelCouncilService: AustralianNationalKennelCouncilService,
   ) {}
 
-  @Query(() => [AustralianNationalKennelCouncil], { name: 'allANKC' })
+  @Query(() => [AustralianNationalKennelCouncil], {
+    name: 'australianNationalKennelCouncils',
+  })
   findAll() {
-    return this.ankcService.findAll();
+    return this.australianNationalKennelCouncilService.findAll();
   }
 
-  @Query(() => AustralianNationalKennelCouncil, { name: 'ankc' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
-    return this.ankcService.findOne(id);
+  @Query(() => AustralianNationalKennelCouncil, {
+    name: 'australianNationalKennelCouncil',
+  })
+  findOne(@Args('id', { type: () => Int }) id: number) {
+    return this.australianNationalKennelCouncilService.findOne(id);
   }
 }

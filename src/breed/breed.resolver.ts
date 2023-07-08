@@ -1,4 +1,11 @@
-import { Resolver, Query, Args, ResolveField, Parent } from '@nestjs/graphql';
+import {
+  Args,
+  Int,
+  Parent,
+  Query,
+  Resolver,
+  ResolveField,
+} from '@nestjs/graphql';
 import { BreedService } from './breed.service';
 import { BreedColorService } from '../breedColor/breedColor.service';
 import { BreedEyeService } from '../breedEye/breedEye.service';
@@ -17,13 +24,13 @@ export class BreedResolver {
     private readonly breedPatternService: BreedPatternService,
   ) {}
 
-  @Query(() => [Breed], { name: 'allBreed' })
+  @Query(() => [Breed], { name: 'breeds' })
   findAll() {
     return this.breedService.findAll();
   }
 
   @Query(() => Breed, { name: 'breed' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
+  findOne(@Args('id', { type: () => Int }) id: number) {
     return this.breedService.findOne(id);
   }
 

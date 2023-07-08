@@ -1,4 +1,4 @@
-import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { ColorConnection } from '../color/color.entity';
 import { BreedColor } from '../breedColor/breedColor.entity';
 import { EyeConnection } from '../eye/eye.entity';
@@ -25,7 +25,7 @@ import { UnitedKennelClub } from '../unitedKennelClub/unitedKennelClub.entity';
 
 @ObjectType()
 export class Breed {
-  @Field(() => ID)
+  @Field(() => Int)
   id: number;
 
   @Field()

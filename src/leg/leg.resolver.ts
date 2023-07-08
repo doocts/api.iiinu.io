@@ -1,4 +1,4 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { LegService } from './leg.service';
 import { Leg } from './leg.entity';
 
@@ -6,13 +6,13 @@ import { Leg } from './leg.entity';
 export class LegResolver {
   constructor(private readonly legService: LegService) {}
 
-  @Query(() => [Leg], { name: 'allLeg' })
+  @Query(() => [Leg], { name: 'legs' })
   findAll() {
     return this.legService.findAll();
   }
 
   @Query(() => Leg, { name: 'leg' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
+  findOne(@Args('id', { type: () => Int }) id: number) {
     return this.legService.findOne(id);
   }
 }

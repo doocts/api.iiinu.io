@@ -1,4 +1,4 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { HeadService } from './head.service';
 import { Head } from './head.entity';
 
@@ -6,13 +6,13 @@ import { Head } from './head.entity';
 export class HeadResolver {
   constructor(private readonly headService: HeadService) {}
 
-  @Query(() => [Head], { name: 'allHead' })
+  @Query(() => [Head], { name: 'heads' })
   findAll() {
     return this.headService.findAll();
   }
 
   @Query(() => Head, { name: 'head' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
+  findOne(@Args('id', { type: () => Int }) id: number) {
     return this.headService.findOne(id);
   }
 }

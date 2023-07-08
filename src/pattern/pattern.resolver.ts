@@ -1,4 +1,4 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { PatternService } from './pattern.service';
 import { Pattern } from './pattern.entity';
 
@@ -6,13 +6,13 @@ import { Pattern } from './pattern.entity';
 export class PatternResolver {
   constructor(private readonly patternService: PatternService) {}
 
-  @Query(() => [Pattern], { name: 'allPattern' })
+  @Query(() => [Pattern], { name: 'patterns' })
   findAll() {
     return this.patternService.findAll();
   }
 
   @Query(() => Pattern, { name: 'pattern' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
+  findOne(@Args('id', { type: () => Int }) id: number) {
     return this.patternService.findOne(id);
   }
 }

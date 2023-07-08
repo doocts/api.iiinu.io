@@ -1,18 +1,20 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { AmericanKennelClubService } from './americanKennelClub.service';
 import { AmericanKennelClub } from './americanKennelClub.entity';
 
 @Resolver(() => AmericanKennelClub)
 export class AmericanKennelClubResolver {
-  constructor(private readonly akcService: AmericanKennelClubService) {}
+  constructor(
+    private readonly amerikanKennelClubService: AmericanKennelClubService,
+  ) {}
 
-  @Query(() => [AmericanKennelClub], { name: 'allAKC' })
+  @Query(() => [AmericanKennelClub], { name: 'amerikanKennelClubs' })
   findAll() {
-    return this.akcService.findAll();
+    return this.amerikanKennelClubService.findAll();
   }
 
-  @Query(() => AmericanKennelClub, { name: 'akc' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
-    return this.akcService.findOne(id);
+  @Query(() => AmericanKennelClub, { name: 'amerikanKennelClub' })
+  findOne(@Args('id', { type: () => Int }) id: number) {
+    return this.amerikanKennelClubService.findOne(id);
   }
 }

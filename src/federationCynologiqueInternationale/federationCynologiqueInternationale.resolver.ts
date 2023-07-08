@@ -1,20 +1,24 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { FederationCynologiqueInternationaleService } from './federationCynologiqueInternationale.service';
 import { FederationCynologiqueInternationale } from './federationCynologiqueInternationale.entity';
 
 @Resolver(() => FederationCynologiqueInternationale)
 export class FederationCynologiqueInternationaleResolver {
   constructor(
-    private readonly fciService: FederationCynologiqueInternationaleService,
+    private readonly federationCynologiqueInternationaleService: FederationCynologiqueInternationaleService,
   ) {}
 
-  @Query(() => [FederationCynologiqueInternationale], { name: 'allFCI' })
+  @Query(() => [FederationCynologiqueInternationale], {
+    name: 'federationCynologiqueInternationales',
+  })
   findAll() {
-    return this.fciService.findAll();
+    return this.federationCynologiqueInternationaleService.findAll();
   }
 
-  @Query(() => FederationCynologiqueInternationale, { name: 'fci' })
-  findOne(@Args('id', { type: () => Number }) id: number) {
-    return this.fciService.findOne(id);
+  @Query(() => FederationCynologiqueInternationale, {
+    name: 'federationCynologiqueInternationale',
+  })
+  findOne(@Args('id', { type: () => Int }) id: number) {
+    return this.federationCynologiqueInternationaleService.findOne(id);
   }
 }

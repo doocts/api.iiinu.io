@@ -1,9 +1,9 @@
-import { Field, ObjectType, Int, ID } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { BreedColor } from '../breedColor/breedColor.entity';
 
 @ObjectType()
 export class Color {
-  @Field(() => ID)
+  @Field(() => Int)
   id: number;
 
   @Field()
