@@ -10,6 +10,9 @@ import { BodyService } from './body/body.service';
 import { BodyResolver } from './body/body.resolver';
 import { BreedService } from './breed/breed.service';
 import { BreedResolver } from './breed/breed.resolver';
+import { BreedColorService } from './breedColor/breedColor.service';
+import { BreedEyeService } from './breedEye/breedEye.service';
+import { BreedPatternService } from './breedPattern/breedPattern.service';
 import { CanadianKennelClubService } from './canadianKennelClub/canadianKennelClub.service';
 import { CanadianKennelClubResolver } from './canadianKennelClub/canadianKennelClub.resolver';
 import { CoatService } from './coat/coat.service';
@@ -64,6 +67,9 @@ import { UnitedKennelClubResolver } from './unitedKennelClub/unitedKennelClub.re
     BodyResolver,
     BreedService,
     BreedResolver,
+    BreedColorService,
+    BreedPatternService,
+    BreedEyeService,
     CanadianKennelClubService,
     CanadianKennelClubResolver,
     CoatService,

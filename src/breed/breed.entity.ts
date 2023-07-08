@@ -1,6 +1,9 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { ColorConnection } from '../color/color.entity';
 import { BreedColor } from '../breedColor/breedColor.entity';
+import { EyeConnection } from '../eye/eye.entity';
 import { BreedEye } from '../breedEye/breedEye.entity';
+import { PatternConnection } from '../pattern/pattern.entity';
 import { BreedPattern } from '../breedPattern/breedPattern.entity';
 import { AmericanKennelClub } from '../americanKennelClub/americanKennelClub.entity';
 import { AustralianNationalKennelCouncil } from '../australianNationalKennelCouncil/australianNationalKennelCouncil.entity';
@@ -100,11 +103,20 @@ export class Breed {
   @Field(() => [BreedColor], { nullable: true })
   colors?: BreedColor[];
 
+  @Field(() => ColorConnection, { nullable: true })
+  colorConnection?: ColorConnection;
+
   @Field(() => [BreedEye], { nullable: true })
   eyes?: BreedEye[];
 
+  @Field(() => EyeConnection, { nullable: true })
+  eyeConnection?: EyeConnection;
+
   @Field(() => [BreedPattern], { nullable: true })
   patterns?: BreedPattern[];
+
+  @Field(() => PatternConnection, { nullable: true })
+  patternConnection?: PatternConnection;
 
   @Field(() => CanadianKennelClub, { nullable: true })
   canadianKennelClub?: CanadianKennelClub;
