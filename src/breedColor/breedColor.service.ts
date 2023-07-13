@@ -5,7 +5,7 @@ import { PrismaService } from '../prisma/prisma.service';
 export class BreedColorService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findByBreedId(breedId: number) {
+  async findByBreedId(breedId: number, locale: string) {
     const breedColors = await this.prisma.breedColor.findMany({
       where: {
         breedId: breedId,
@@ -19,9 +19,49 @@ export class BreedColorService {
         },
       });
 
-      return { ...breedColor, color };
+      const localizedColor = this.localizeColor(color, locale);
+
+      return { ...breedColor, color: localizedColor };
     });
 
     return Promise.all(colorPromises);
+  }
+
+  async findByColorId(colorId: number, locale: string) {
+    const breedColors = await this.prisma.breedColor.findMany({
+      where: {
+        colorId: colorId,
+      },
+    });
+
+    const breedPromises = breedColors.map(async (breedColor) => {
+      const breed = await this.prisma.breed.findUnique({
+        where: {
+          id: breedColor.breedId,
+        },
+      });
+
+      const localizedBreed = this.localizeColor(breed, locale);
+
+      return { ...breedColor, breed: localizedBreed };
+    });
+
+    return Promise.all(breedPromises);
+  }
+
+  private localizeColor(color: any, locale: string) {
+    if (locale === 'ja') {
+      return {
+        ...color,
+        name: color.nameJa,
+        description: color.descriptionJa,
+      };
+    } else {
+      return {
+        ...color,
+        name: color.nameEn,
+        description: color.descriptionEn,
+      };
+    }
   }
 }

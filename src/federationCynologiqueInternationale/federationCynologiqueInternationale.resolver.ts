@@ -1,4 +1,11 @@
-import { Args, Int, Query, Resolver } from '@nestjs/graphql';
+import {
+  Args,
+  Int,
+  Parent,
+  Query,
+  Resolver,
+  ResolveField,
+} from '@nestjs/graphql';
 import { FederationCynologiqueInternationaleService } from './federationCynologiqueInternationale.service';
 import { FederationCynologiqueInternationale } from './federationCynologiqueInternationale.entity';
 
@@ -11,14 +18,39 @@ export class FederationCynologiqueInternationaleResolver {
   @Query(() => [FederationCynologiqueInternationale], {
     name: 'federationCynologiqueInternationales',
   })
-  findAll() {
-    return this.federationCynologiqueInternationaleService.findAll();
+  findAll(
+    @Args('locale', { type: () => String, nullable: true }) locale: string,
+  ) {
+    return this.federationCynologiqueInternationaleService.findAll(locale);
   }
 
   @Query(() => FederationCynologiqueInternationale, {
     name: 'federationCynologiqueInternationale',
   })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.federationCynologiqueInternationaleService.findOne(id);
+  findOne(
+    @Args('id', { type: () => Int }) id: number,
+    @Args('locale', { type: () => String, nullable: true }) locale: string,
+  ) {
+    return this.federationCynologiqueInternationaleService.findOne(id, locale);
+  }
+
+  @ResolveField('name')
+  getName(
+    @Parent()
+    federationCynologiqueInternationale: FederationCynologiqueInternationale,
+  ): string {
+    return federationCynologiqueInternationale.locale === 'ja'
+      ? federationCynologiqueInternationale.nameJa
+      : federationCynologiqueInternationale.nameEn;
+  }
+
+  @ResolveField('description')
+  getDescription(
+    @Parent()
+    federationCynologiqueInternationale: FederationCynologiqueInternationale,
+  ): string {
+    return federationCynologiqueInternationale.locale === 'ja'
+      ? federationCynologiqueInternationale.descriptionJa ?? ''
+      : federationCynologiqueInternationale.descriptionEn ?? '';
   }
 }

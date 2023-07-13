@@ -1,4 +1,11 @@
-import { Args, Int, Query, Resolver } from '@nestjs/graphql';
+import {
+  Args,
+  Int,
+  Parent,
+  Query,
+  Resolver,
+  ResolveField,
+} from '@nestjs/graphql';
 import { UnitedKennelClubService } from './unitedKennelClub.service';
 import { UnitedKennelClub } from './unitedKennelClub.entity';
 
@@ -9,12 +16,31 @@ export class UnitedKennelClubResolver {
   ) {}
 
   @Query(() => [UnitedKennelClub], { name: 'unitedKennelClubs' })
-  findAll() {
-    return this.unitedKennelClubService.findAll();
+  findAll(
+    @Args('locale', { type: () => String, nullable: true }) locale: string,
+  ) {
+    return this.unitedKennelClubService.findAll(locale);
   }
 
   @Query(() => UnitedKennelClub, { name: 'unitedKennelClub' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.unitedKennelClubService.findOne(id);
+  findOne(
+    @Args('id', { type: () => Int }) id: number,
+    @Args('locale', { type: () => String, nullable: true }) locale: string,
+  ) {
+    return this.unitedKennelClubService.findOne(id, locale);
+  }
+
+  @ResolveField('name')
+  getName(@Parent() unitedKennelClub: UnitedKennelClub): string {
+    return unitedKennelClub.locale === 'ja'
+      ? unitedKennelClub.nameJa
+      : unitedKennelClub.nameEn;
+  }
+
+  @ResolveField('description')
+  getDescription(@Parent() unitedKennelClub: UnitedKennelClub): string {
+    return unitedKennelClub.locale === 'ja'
+      ? unitedKennelClub.descriptionJa ?? ''
+      : unitedKennelClub.descriptionEn ?? '';
   }
 }

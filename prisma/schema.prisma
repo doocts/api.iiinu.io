@@ -17,7 +17,7 @@ model AmericanKennelClub {
   nameJa        String  @unique
   descriptionEn String?
   descriptionJa String?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model AustralianNationalKennelCouncil {
@@ -26,7 +26,7 @@ model AustralianNationalKennelCouncil {
   nameJa        String  @unique
   descriptionEn String?
   descriptionJa String?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Body {
@@ -36,7 +36,7 @@ model Body {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model BreedColor {
@@ -140,7 +140,7 @@ model CanadianKennelClub {
   nameJa        String  @unique
   descriptionEn String?
   descriptionJa String?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Coat {
@@ -150,7 +150,7 @@ model Coat {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Color {
@@ -160,7 +160,7 @@ model Color {
   descriptionEn String?
   descriptionJa String?
   slug          String       @unique
-  Breeds        BreedColor[]
+  breeds        BreedColor[]
 }
 
 model Country {
@@ -171,7 +171,7 @@ model Country {
   descriptionJa String?
   slug          String  @unique
   parentId      Int?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Ear {
@@ -181,7 +181,7 @@ model Ear {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Eye {
@@ -191,7 +191,7 @@ model Eye {
   descriptionEn String?
   descriptionJa String?
   slug          String     @unique
-  Breeds        BreedEye[]
+  breeds        BreedEye[]
 }
 
 model FederationCynologiqueInternationale {
@@ -201,7 +201,7 @@ model FederationCynologiqueInternationale {
   descriptionEn String?
   descriptionJa String?
   parentId      Int?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Head {
@@ -211,7 +211,7 @@ model Head {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Leg {
@@ -221,7 +221,7 @@ model Leg {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model NewZealandKennelClub {
@@ -230,7 +230,7 @@ model NewZealandKennelClub {
   nameJa        String  @unique
   descriptionEn String?
   descriptionJa String?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Pattern {
@@ -240,7 +240,7 @@ model Pattern {
   descriptionEn String?
   descriptionJa String?
   slug          String         @unique
-  Breeds        BreedPattern[]
+  breeds        BreedPattern[]
 }
 
 model Role {
@@ -251,7 +251,7 @@ model Role {
   descriptionJa String?
   slug          String  @unique
   parentId      Int?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Size {
@@ -261,7 +261,7 @@ model Size {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Status {
@@ -271,7 +271,7 @@ model Status {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model Tail {
@@ -281,7 +281,7 @@ model Tail {
   descriptionEn String?
   descriptionJa String?
   slug          String  @unique
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model TheKennelClub {
@@ -290,7 +290,7 @@ model TheKennelClub {
   nameJa        String  @unique
   descriptionEn String?
   descriptionJa String?
-  breed         Breed[]
+  breeds        Breed[]
 }
 
 model UnitedKennelClub {
@@ -299,5 +299,5 @@ model UnitedKennelClub {
   nameJa        String  @unique
   descriptionEn String?
   descriptionJa String?
-  breed         Breed[]
+  breeds        Breed[]
 }

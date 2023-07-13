@@ -1,28 +1,27 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { BreedColor } from '../breedColor/breedColor.entity';
+import { BreedConnection } from '../breed/breed.entity';
 
 @ObjectType()
 export class Color {
+  locale?: string;
+
   @Field(() => Int)
   id: number;
 
-  @Field()
   nameEn: string;
-
-  @Field()
   nameJa: string;
-
-  @Field({ nullable: true })
-  descriptionEn: string;
-
-  @Field({ nullable: true })
-  descriptionJa: string;
+  descriptionEn?: string;
+  descriptionJa?: string;
 
   @Field()
   slug: string;
 
   @Field(() => [BreedColor], { nullable: true })
   breeds?: BreedColor[];
+
+  @Field(() => BreedConnection, { nullable: true })
+  breedConnection?: BreedConnection;
 }
 
 @ObjectType()

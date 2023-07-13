@@ -3,19 +3,14 @@ import { Breed } from '../breed/breed.entity';
 
 @ObjectType()
 export class Role {
+  locale?: string;
+
   @Field(() => Int)
   id: number;
 
-  @Field()
   nameEn: string;
-
-  @Field()
   nameJa: string;
-
-  @Field({ nullable: true })
   descriptionEn?: string;
-
-  @Field({ nullable: true })
   descriptionJa?: string;
 
   @Field()
@@ -24,6 +19,6 @@ export class Role {
   @Field({ nullable: true })
   parentId?: number;
 
-  @Field(() => [Breed])
-  breed: Breed[];
+  @Field(() => [Breed], { nullable: true })
+  breeds: Breed[];
 }

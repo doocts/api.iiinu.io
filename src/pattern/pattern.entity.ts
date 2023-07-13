@@ -1,21 +1,17 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { BreedPattern } from '../breedPattern/breedPattern.entity';
+import { BreedConnection } from '../breed/breed.entity';
 
 @ObjectType()
 export class Pattern {
+  locale?: string;
+
   @Field(() => Int)
   id: number;
 
-  @Field()
   nameEn: string;
-
-  @Field()
   nameJa: string;
-
-  @Field({ nullable: true })
   descriptionEn?: string;
-
-  @Field({ nullable: true })
   descriptionJa?: string;
 
   @Field()
@@ -23,6 +19,9 @@ export class Pattern {
 
   @Field(() => [BreedPattern], { nullable: true })
   breeds?: BreedPattern[];
+
+  @Field(() => BreedConnection, { nullable: true })
+  breedConnection?: BreedConnection;
 }
 
 @ObjectType()

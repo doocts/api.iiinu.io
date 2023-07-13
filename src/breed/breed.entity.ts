@@ -25,59 +25,30 @@ import { UnitedKennelClub } from '../unitedKennelClub/unitedKennelClub.entity';
 
 @ObjectType()
 export class Breed {
+  locale?: string;
+
   @Field(() => Int)
   id: number;
 
-  @Field()
   nameEn: string;
-
-  @Field()
   nameJa: string;
+  descriptionEn?: string;
+  descriptionJa?: string;
+  historyEn?: string;
+  historyJa?: string;
+  featuresJa?: string;
+  featuresEn?: string;
+  traitsJa?: string;
+  traitsEn?: string;
+  healthJa?: string;
+  healthEn?: string;
+  notesJa?: string;
+  notesEn?: string;
+  originJa?: string;
+  originEn?: string;
 
   @Field({ nullable: true })
   kana?: string;
-
-  @Field({ nullable: true })
-  descriptionEn?: string;
-
-  @Field({ nullable: true })
-  descriptionJa?: string;
-
-  @Field({ nullable: true })
-  historyEn?: string;
-
-  @Field({ nullable: true })
-  historyJa?: string;
-
-  @Field({ nullable: true })
-  featuresJa?: string;
-
-  @Field({ nullable: true })
-  featuresEn?: string;
-
-  @Field({ nullable: true })
-  traitsJa?: string;
-
-  @Field({ nullable: true })
-  traitsEn?: string;
-
-  @Field({ nullable: true })
-  healthJa?: string;
-
-  @Field({ nullable: true })
-  healthEn?: string;
-
-  @Field({ nullable: true })
-  notesJa?: string;
-
-  @Field({ nullable: true })
-  notesEn?: string;
-
-  @Field({ nullable: true })
-  originJa?: string;
-
-  @Field({ nullable: true })
-  originEn?: string;
 
   @Field({ nullable: true })
   minHeight?: number;
@@ -159,4 +130,22 @@ export class Breed {
 
   @Field(() => UnitedKennelClub, { nullable: true })
   unitedKennelClub?: UnitedKennelClub;
+}
+
+@ObjectType()
+export class BreedEdge {
+  @Field(() => Breed)
+  node: Breed;
+
+  @Field(() => String)
+  cursor: string;
+}
+
+@ObjectType()
+export class BreedConnection {
+  @Field(() => [BreedEdge])
+  edges: BreedEdge[];
+
+  @Field(() => Int)
+  totalCount: number;
 }
