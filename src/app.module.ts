@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
-import { PrismaModule } from './prisma';
+import { CacheModule } from '@nestjs/cache-manager';
 import { TheKennelClubModule } from './modules/the-kennel-club';
 import { AmericanKennelClubModule } from './modules/american-kennel-club';
 import { AustralianNationalKennelCouncilModule } from './modules/australian-national-kennel-council';
@@ -35,7 +35,10 @@ import { TailModule } from './modules/tail';
       autoSchemaFile: true,
       sortSchema: true,
     }),
-    PrismaModule,
+    CacheModule.register({
+      ttl: 5, // seconds
+      max: 10, // maximum number of items in cache
+    }),
     TheKennelClubModule,
     AmericanKennelClubModule,
     AustralianNationalKennelCouncilModule,
