@@ -3,6 +3,7 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
+import fastifyCsrf from '@fastify/csrf-protection';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -11,6 +12,8 @@ async function bootstrap() {
       AppModule,
       new FastifyAdapter(),
     );
+    app.enableCors();
+    app.register(fastifyCsrf);
     await app.listen(3000, '0.0.0.0');
   } catch (error) {
     console.error('Error during bootstrap:', error);

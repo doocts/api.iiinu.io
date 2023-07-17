@@ -23,6 +23,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@fastify/csrf-protection": "^6.3.0",
     "@mercuriusjs/gateway": "^2.0.0",
     "@nestjs/cache-manager": "^2.0.1",
     "@nestjs/common": "^10.0.0",
