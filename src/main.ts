@@ -14,7 +14,7 @@ async function bootstrap() {
     );
     app.enableCors();
     app.register(fastifyCsrf);
-    await app.listen(3000, '0.0.0.0');
+    await app.listen(process.env.PORT || 3000, '0.0.0.0');
   } catch (error) {
     console.error('Error during bootstrap:', error);
     process.exit(1);

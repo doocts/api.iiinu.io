@@ -5,10 +5,35 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: development
     tty: true
     volumes:
       - type: bind
         source: .
         target: /api
     ports:
-      - '5000:3000'
+      - '3000:3000'
+    env_file:
+      - .env
+    command: yarn start:dev
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    container_name: db
+    image: postgres:14
+    restart: always
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      retries: 5
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: general
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+volumes:
+  postgres_data:
