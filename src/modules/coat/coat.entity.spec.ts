@@ -1,7 +1,7 @@
-import { Coat } from './coat.entity';
+import { CoatEntity } from './coat.entity';
 
 describe('Coat', () => {
   it('should be defined', () => {
-    expect(new Coat()).toBeDefined();
+    expect(new CoatEntity()).toBeDefined();
   });
 });

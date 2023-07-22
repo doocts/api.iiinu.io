@@ -1,7 +1,7 @@
-import { Eye } from './eye.entity';
+import { EyeEntity } from './eye.entity';
 
 describe('Eye', () => {
   it('should be defined', () => {
-    expect(new Eye()).toBeDefined();
+    expect(new EyeEntity()).toBeDefined();
   });
 });

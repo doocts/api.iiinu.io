@@ -1,7 +1,7 @@
-import { Country } from './country.entity';
+import { CountryEntity } from './country.entity';
 
 describe('Country', () => {
   it('should be defined', () => {
-    expect(new Country()).toBeDefined();
+    expect(new CountryEntity()).toBeDefined();
   });
 });

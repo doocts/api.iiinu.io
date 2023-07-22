@@ -1,7 +1,7 @@
-import { Breed } from './breed.entity';
+import { BreedEntity } from './breed.entity';
 
 describe('Breed', () => {
   it('should be defined', () => {
-    expect(new Breed()).toBeDefined();
+    expect(new BreedEntity()).toBeDefined();
   });
 });

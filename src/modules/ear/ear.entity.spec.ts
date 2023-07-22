@@ -1,7 +1,7 @@
-import { Ear } from './ear.entity';
+import { EarEntity } from './ear.entity';
 
 describe('Ear', () => {
   it('should be defined', () => {
-    expect(new Ear()).toBeDefined();
+    expect(new EarEntity()).toBeDefined();
   });
 });

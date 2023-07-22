@@ -1,7 +1,7 @@
-import { Pattern } from './pattern.entity';
+import { PatternEntity } from './pattern.entity';
 
 describe('Pattern', () => {
   it('should be defined', () => {
-    expect(new Pattern()).toBeDefined();
+    expect(new PatternEntity()).toBeDefined();
   });
 });
