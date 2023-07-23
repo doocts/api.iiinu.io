@@ -7,11 +7,10 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { BreedService } from '../breed';
+import { BreedEntity, BreedService } from '../breed';
 import { BreedColorService } from '../breed-color';
 import { BreedEyeService } from '../breed-eye';
 import { BreedPatternService } from '../breed-pattern';
-import { BreedEntity } from '../breed';
 import { ColorConnection } from '../color';
 import { EyeConnection } from '../eye';
 import { PatternConnection } from '../pattern';
@@ -33,18 +32,20 @@ export class BreedResolver {
   @Query(() => [BreedEntity], { name: 'breeds' })
   findAll(
     @Args('locale', { type: () => String, nullable: true }) locale: string,
+    @Args('sort', { type: () => String, nullable: true })
+    sort: string,
+    @Args('filter', { type: () => String, nullable: true })
+    filter: string,
   ) {
-    return this.breedService.findAll(locale);
+    return this.breedService.findAll(locale, sort, filter);
   }
 
   @Query(() => BreedEntity, { name: 'breed' })
-  async findOne(
+  findOne(
     @Args('id', { type: () => Int }) id: number,
     @Args('locale', { type: () => String, nullable: true }) locale: string,
   ) {
-    const breed = await this.breedService.findOne(id, locale);
-
-    return breed;
+    return this.breedService.findOne(id, locale);
   }
 
   @ResolveField('name')

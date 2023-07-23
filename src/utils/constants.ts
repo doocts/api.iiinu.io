@@ -31,6 +31,7 @@ export const COMMON_ENTITY_FIELD_MAP: Record<string, string> = {
 };
 
 export const BREED_ENTITY_FIELD_MAP: Record<string, string> = {
+  locale: 'locale',
   id: 'id',
   nameEn: 'nameEn',
   nameJa: 'nameJa',

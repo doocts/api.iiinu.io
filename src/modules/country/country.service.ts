@@ -37,6 +37,7 @@ export class CountryService {
       entity[entityField] = record[recordField];
     }
 
+    entity.locale = locale;
     entity.slug = record.slug ?? null;
     entity.parentId = record.parentId ?? null;
 

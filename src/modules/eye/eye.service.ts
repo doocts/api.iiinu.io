@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma';
 import { EyeEntity } from '../eye';
-import { COMMON_ENTITY_FIELD_MAP } from '../../utils';
+import { COMMON_ENTITY_FIELD_MAP, mapToBreedEntity } from '../../utils';
 
 @Injectable()
 export class EyeService {
@@ -36,8 +36,25 @@ export class EyeService {
     }
 
     entity.locale = locale;
-    entity.breeds = record.breeds ?? null;
-    entity.breedConnection = record.breedConnection ?? null;
+    entity.slug = record.slug ?? null;
+
+    if (record.breeds) {
+      entity.breeds = record.breeds.map((breed: any) =>
+        mapToBreedEntity(breed, locale),
+      );
+    }
+
+    if (record.breedConnection) {
+      entity.breedConnection = {
+        totalCount: record.breedConnection.totalCount,
+        edges: record.breedConnection.edges.map((edge: any) => {
+          return {
+            ...edge,
+            node: mapToBreedEntity(edge.node, locale),
+          };
+        }),
+      };
+    }
 
     return entity;
   }

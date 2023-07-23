@@ -35,6 +35,7 @@ export class StatusService {
       entity[entityField] = record[recordField];
     }
 
+    entity.locale = locale;
     entity.slug = record.slug ?? null;
 
     if (record.breeds) {

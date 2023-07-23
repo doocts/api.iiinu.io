@@ -14,8 +14,26 @@ export class BreedService {
     private prisma: PrismaService,
   ) {}
 
-  async findAll(locale: string): Promise<BreedEntity[]> {
+  async findAll(
+    locale: string,
+    sort: string,
+    filter: string,
+  ): Promise<BreedEntity[]> {
+    const sortField = locale === 'ja' ? 'kana' : 'nameEn';
+    const sortClause = { [sortField]: sort };
+    const whereClause = filter
+      ? {
+          OR: [
+            { nameEn: { contains: filter } },
+            { nameJa: { contains: filter } },
+            { descriptionEn: { contains: filter } },
+            { descriptionJa: { contains: filter } },
+          ],
+        }
+      : undefined;
     const breedRecords = await this.prisma.breed.findMany({
+      orderBy: sortClause,
+      where: whereClause,
       include: BREED_INCLUDE_FIELDS,
     });
 
@@ -33,7 +51,6 @@ export class BreedService {
 
   private mapToEntity(record: any, locale: string): BreedEntity {
     const entity = new BreedEntity();
-    entity.locale = locale;
 
     for (const entityField in COMMON_ENTITY_FIELD_MAP) {
       const recordField = COMMON_ENTITY_FIELD_MAP[entityField];
@@ -44,6 +61,8 @@ export class BreedService {
       const recordField = BREED_ENTITY_FIELD_MAP[entityField];
       entity[entityField] = record[recordField];
     }
+
+    entity.locale = locale;
 
     return entity;
   }

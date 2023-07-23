@@ -49,6 +49,7 @@ export class FederationCynologiqueInternationaleService {
       entity[entityField] = record[recordField];
     }
 
+    entity.locale = locale;
     entity.parentId = record.parentId ?? null;
 
     if (record.breeds) {

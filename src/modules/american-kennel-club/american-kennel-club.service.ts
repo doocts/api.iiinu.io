@@ -44,6 +44,8 @@ export class AmericanKennelClubService {
       entity[entityField] = record[recordField];
     }
 
+    entity.locale = locale;
+
     if (record.breeds) {
       entity.breeds = record.breeds.map((breedItem: any) =>
         mapToBreedEntity(breedItem, locale),

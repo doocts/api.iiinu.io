@@ -36,6 +36,7 @@ export class ColorService {
     }
 
     entity.locale = locale;
+    entity.slug = record.slug ?? null;
 
     if (record.breeds) {
       entity.breeds = record.breeds.map((breed: any) =>
