@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { LegResolver } from './leg.resolver';
+import { LegResolver } from 'src/modules/leg';
 
 describe('LegResolver', () => {
   let resolver: LegResolver;

@@ -1,4 +1,4 @@
-import { TheKennelClubEntity } from './the-kennel-club.entity';
+import { TheKennelClubEntity } from 'src/modules/the-kennel-club';
 
 describe('TheKennelClub', () => {
   it('should be defined', () => {

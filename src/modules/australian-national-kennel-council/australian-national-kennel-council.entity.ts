@@ -1,5 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { BreedEntity } from '../breed';
+import { BreedEntity } from 'src/modules/breed';
 
 @ObjectType()
 export class AustralianNationalKennelCouncilEntity {

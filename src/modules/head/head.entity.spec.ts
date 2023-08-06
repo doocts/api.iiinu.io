@@ -1,4 +1,4 @@
-import { HeadEntity } from './head.entity';
+import { HeadEntity } from 'src/modules/head';
 
 describe('Head', () => {
   it('should be defined', () => {

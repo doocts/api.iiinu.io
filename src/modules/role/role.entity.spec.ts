@@ -1,4 +1,4 @@
-import { RoleEntity } from './role.entity';
+import { RoleEntity } from 'src/modules/role';
 
 describe('Role', () => {
   it('should be defined', () => {

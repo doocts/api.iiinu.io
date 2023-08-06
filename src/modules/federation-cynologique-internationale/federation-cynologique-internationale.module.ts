@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { FederationCynologiqueInternationaleResolver } from './federation-cynologique-internationale.resolver';
-import { FederationCynologiqueInternationaleService } from './federation-cynologique-internationale.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { FederationCynologiqueInternationaleResolver } from 'src/modules/federation-cynologique-internationale/federation-cynologique-internationale.resolver';
+import { FederationCynologiqueInternationaleService } from 'src/modules/federation-cynologique-internationale/federation-cynologique-internationale.service';
 
 @Module({
   imports: [PrismaModule],

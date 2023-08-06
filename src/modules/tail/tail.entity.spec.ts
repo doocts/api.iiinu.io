@@ -1,4 +1,4 @@
-import { TailEntity } from './tail.entity';
+import { TailEntity } from 'src/modules/tail';
 
 describe('Tail', () => {
   it('should be defined', () => {

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PatternResolver } from './pattern.resolver';
+import { PatternResolver } from 'src/modules/pattern';
 
 describe('PatternResolver', () => {
   let resolver: PatternResolver;

@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { BodyEntity, BodyService } from '../body';
-import { localizeEntity } from '../../utils';
+import { BodyEntity, BodyService } from 'src/modules/body';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => BodyEntity)
 export class BodyResolver {

@@ -7,10 +7,10 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { EyeEntity, EyeService } from '../eye';
-import { BreedEyeService } from '../breed-eye';
-import { BreedConnection } from '../breed';
-import { localizeEntity, mapToBreedEntity } from '../../utils';
+import { EyeEntity, EyeService } from 'src/modules/eye';
+import { BreedEyeService } from 'src/modules/breed-eye';
+import { BreedConnection } from 'src/modules/breed';
+import { localizeEntity, mapToBreedEntity } from 'src/utils';
 
 @Resolver(() => EyeEntity)
 export class EyeResolver {

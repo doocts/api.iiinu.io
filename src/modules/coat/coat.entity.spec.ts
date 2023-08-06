@@ -1,4 +1,4 @@
-import { CoatEntity } from './coat.entity';
+import { CoatEntity } from 'src/modules/coat';
 
 describe('Coat', () => {
   it('should be defined', () => {

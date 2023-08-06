@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { StatusResolver } from './status.resolver';
+import { StatusResolver } from 'src/modules/status';
 
 describe('StatusResolver', () => {
   let resolver: StatusResolver;

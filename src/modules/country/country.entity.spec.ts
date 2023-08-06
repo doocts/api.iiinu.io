@@ -1,4 +1,4 @@
-import { CountryEntity } from './country.entity';
+import { CountryEntity } from 'src/modules/country';
 
 describe('Country', () => {
   it('should be defined', () => {

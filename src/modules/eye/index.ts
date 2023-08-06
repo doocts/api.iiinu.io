@@ -1,7 +1,7 @@
-import { EyeEntity, EyeEdge, EyeConnection } from './eye.entity';
-import { EyeModule } from './eye.module';
-import { EyeResolver } from './eye.resolver';
-import { EyeService } from './eye.service';
+import { EyeEntity, EyeEdge, EyeConnection } from 'src/modules/eye/eye.entity';
+import { EyeModule } from 'src/modules/eye/eye.module';
+import { EyeResolver } from 'src/modules/eye/eye.resolver';
+import { EyeService } from 'src/modules/eye/eye.service';
 export {
   EyeConnection,
   EyeEdge,

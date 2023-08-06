@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CoatResolver } from './coat.resolver';
+import { CoatResolver } from 'src/modules/coat';
 
 describe('CoatResolver', () => {
   let resolver: CoatResolver;

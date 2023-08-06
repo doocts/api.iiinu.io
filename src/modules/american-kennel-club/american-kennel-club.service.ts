@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma';
-import { AmericanKennelClubEntity } from '../american-kennel-club';
-import { COMMON_ENTITY_FIELD_MAP, mapToBreedEntity } from '../../utils';
+import { PrismaService } from 'src/prisma';
+import { AmericanKennelClubEntity } from 'src/modules/american-kennel-club';
+import { COMMON_ENTITY_FIELD_MAP, mapToBreedEntity } from 'src/utils';
 
 @Injectable()
 export class AmericanKennelClubService {

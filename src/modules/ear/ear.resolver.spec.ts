@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { EarResolver } from './ear.resolver';
+import { EarResolver } from 'src/modules/ear';
 
 describe('EarResolver', () => {
   let resolver: EarResolver;

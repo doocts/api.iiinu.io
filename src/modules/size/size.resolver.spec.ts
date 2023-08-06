@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SizeResolver } from './size.resolver';
+import { SizeResolver } from 'src/modules/size';
 
 describe('SizeResolver', () => {
   let resolver: SizeResolver;

@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { StatusEntity, StatusService } from '../status';
-import { localizeEntity } from '../../utils';
+import { StatusEntity, StatusService } from 'src/modules/status';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => StatusEntity)
 export class StatusResolver {

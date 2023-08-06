@@ -7,8 +7,11 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { TheKennelClubEntity, TheKennelClubService } from '../the-kennel-club';
-import { localizeEntity } from '../../utils';
+import {
+  TheKennelClubEntity,
+  TheKennelClubService,
+} from 'src/modules/the-kennel-club';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => TheKennelClubEntity)
 export class TheKennelClubResolver {

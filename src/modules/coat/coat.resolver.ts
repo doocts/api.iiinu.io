@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { CoatEntity, CoatService } from '../coat';
-import { localizeEntity } from '../../utils';
+import { CoatEntity, CoatService } from 'src/modules/coat';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => CoatEntity)
 export class CoatResolver {

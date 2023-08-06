@@ -1,4 +1,4 @@
-import { NewZealandKennelClubEntity } from './new-zealand-kennel-club.entity';
+import { NewZealandKennelClubEntity } from 'src/modules/new-zealand-kennel-club';
 
 describe('NewZealandKennelClub', () => {
   it('should be defined', () => {

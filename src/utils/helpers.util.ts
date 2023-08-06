@@ -1,5 +1,5 @@
-import { BreedEntity } from '../modules/breed';
-import { BREED_ENTITY_FIELD_MAP } from './constants';
+import { BreedEntity } from 'src/modules/breed';
+import { BREED_ENTITY_FIELD_MAP } from 'src/utils/constants';
 
 export function mapToEdge(node: any, locale: string) {
   return {

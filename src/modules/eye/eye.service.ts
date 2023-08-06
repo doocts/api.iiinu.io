@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma';
-import { EyeEntity } from '../eye';
-import { COMMON_ENTITY_FIELD_MAP, mapToBreedEntity } from '../../utils';
+import { PrismaService } from 'src/prisma';
+import { EyeEntity } from 'src/modules/eye';
+import { COMMON_ENTITY_FIELD_MAP, mapToBreedEntity } from 'src/utils';
 
 @Injectable()
 export class EyeService {

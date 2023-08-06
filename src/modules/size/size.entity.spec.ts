@@ -1,4 +1,4 @@
-import { SizeEntity } from './size.entity';
+import { SizeEntity } from 'src/modules/size';
 
 describe('Size', () => {
   it('should be defined', () => {

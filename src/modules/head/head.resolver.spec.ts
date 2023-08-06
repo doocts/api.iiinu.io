@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HeadResolver } from './head.resolver';
+import { HeadResolver } from 'src/modules/head';
 
 describe('HeadResolver', () => {
   let resolver: HeadResolver;

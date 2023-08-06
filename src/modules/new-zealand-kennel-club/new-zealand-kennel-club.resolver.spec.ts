@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { NewZealandKennelClubResolver } from './new-zealand-kennel-club.resolver';
+import { NewZealandKennelClubResolver } from 'src/modules/new-zealand-kennel-club';
 
 describe('NewZealandKennelClubResolver', () => {
   let resolver: NewZealandKennelClubResolver;

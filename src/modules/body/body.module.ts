@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { BodyResolver } from './body.resolver';
-import { BodyService } from './body.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { BodyResolver } from 'src/modules/body/body.resolver';
+import { BodyService } from 'src/modules/body/body.service';
 
 @Module({
   imports: [PrismaModule],

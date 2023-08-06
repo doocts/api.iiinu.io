@@ -1,4 +1,4 @@
-import { BreedEntity } from './breed.entity';
+import { BreedEntity } from 'src/modules/breed';
 
 describe('Breed', () => {
   it('should be defined', () => {

@@ -1,4 +1,4 @@
-import { AustralianNationalKennelCouncilEntity } from './australian-national-kennel-council.entity';
+import { AustralianNationalKennelCouncilEntity } from 'src/modules/australian-national-kennel-council';
 
 describe('AustralianNationalKennelCouncil', () => {
   it('should be defined', () => {

@@ -1,11 +1,11 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma';
-import { BreedEntity } from '../breed';
+import { PrismaService } from 'src/prisma';
+import { BreedEntity } from 'src/modules/breed';
 import {
   BREED_ENTITY_FIELD_MAP,
   BREED_INCLUDE_FIELDS,
   COMMON_ENTITY_FIELD_MAP,
-} from '../../utils';
+} from 'src/utils';
 
 @Injectable()
 export class BreedService {

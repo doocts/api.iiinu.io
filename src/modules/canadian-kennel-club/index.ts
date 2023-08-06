@@ -1,7 +1,7 @@
-import { CanadianKennelClubEntity } from './canadian-kennel-club.entity';
-import { CanadianKennelClubModule } from './canadian-kennel-club.module';
-import { CanadianKennelClubResolver } from './canadian-kennel-club.resolver';
-import { CanadianKennelClubService } from './canadian-kennel-club.service';
+import { CanadianKennelClubEntity } from 'src/modules/canadian-kennel-club/canadian-kennel-club.entity';
+import { CanadianKennelClubModule } from 'src/modules/canadian-kennel-club/canadian-kennel-club.module';
+import { CanadianKennelClubResolver } from 'src/modules/canadian-kennel-club/canadian-kennel-club.resolver';
+import { CanadianKennelClubService } from 'src/modules/canadian-kennel-club/canadian-kennel-club.service';
 export {
   CanadianKennelClubEntity,
   CanadianKennelClubModule,

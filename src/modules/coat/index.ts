@@ -1,5 +1,5 @@
-import { CoatEntity } from './coat.entity';
-import { CoatModule } from './coat.module';
-import { CoatResolver } from './coat.resolver';
-import { CoatService } from './coat.service';
+import { CoatEntity } from 'src/modules/coat/coat.entity';
+import { CoatModule } from 'src/modules/coat/coat.module';
+import { CoatResolver } from 'src/modules/coat/coat.resolver';
+import { CoatService } from 'src/modules/coat/coat.service';
 export { CoatEntity, CoatModule, CoatResolver, CoatService };

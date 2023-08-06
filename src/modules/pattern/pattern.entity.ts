@@ -1,6 +1,6 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { BreedPatternEntity } from '../breed-pattern';
-import { BreedConnection } from '../breed';
+import { BreedPatternEntity } from 'src/modules/breed-pattern';
+import { BreedConnection } from 'src/modules/breed';
 
 @ObjectType()
 export class PatternEntity {

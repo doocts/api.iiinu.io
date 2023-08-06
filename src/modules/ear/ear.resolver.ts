@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { EarEntity, EarService } from '../ear';
-import { localizeEntity } from '../../utils';
+import { EarEntity, EarService } from 'src/modules/ear';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => EarEntity)
 export class EarResolver {

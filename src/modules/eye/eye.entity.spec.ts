@@ -1,4 +1,4 @@
-import { EyeEntity } from './eye.entity';
+import { EyeEntity } from 'src/modules/eye';
 
 describe('Eye', () => {
   it('should be defined', () => {

@@ -1,5 +1,5 @@
-import { RoleEntity } from './role.entity';
-import { RoleModule } from './role.module';
-import { RoleResolver } from './role.resolver';
-import { RoleService } from './role.service';
+import { RoleEntity } from 'src/modules/role/role.entity';
+import { RoleModule } from 'src/modules/role/role.module';
+import { RoleResolver } from 'src/modules/role/role.resolver';
+import { RoleService } from 'src/modules/role/role.service';
 export { RoleEntity, RoleModule, RoleResolver, RoleService };

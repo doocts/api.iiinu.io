@@ -10,8 +10,8 @@ import { forwardRef, Inject } from '@nestjs/common';
 import {
   NewZealandKennelClubEntity,
   NewZealandKennelClubService,
-} from '../new-zealand-kennel-club';
-import { localizeEntity } from '../../utils';
+} from 'src/modules/new-zealand-kennel-club';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => NewZealandKennelClubEntity)
 export class NewZealandKennelClubResolver {

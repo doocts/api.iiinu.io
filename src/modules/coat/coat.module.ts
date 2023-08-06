@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { CoatResolver } from './coat.resolver';
-import { CoatService } from './coat.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { CoatResolver } from 'src/modules/coat/coat.resolver';
+import { CoatService } from 'src/modules/coat/coat.service';
 
 @Module({
   imports: [PrismaModule],

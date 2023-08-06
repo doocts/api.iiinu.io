@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { RoleEntity, RoleService } from '../role';
-import { localizeEntity } from '../../utils';
+import { RoleEntity, RoleService } from 'src/modules/role';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => RoleEntity)
 export class RoleResolver {

@@ -1,4 +1,4 @@
-import { BreedPatternEntity } from './breed-pattern.entity';
+import { BreedPatternEntity } from 'src/modules/breed-pattern';
 
 describe('BreedPattern', () => {
   it('should be defined', () => {

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { TailResolver } from './tail.resolver';
-import { TailService } from './tail.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { TailResolver } from 'src/modules/tail/tail.resolver';
+import { TailService } from 'src/modules/tail/tail.service';
 
 @Module({
   imports: [PrismaModule],

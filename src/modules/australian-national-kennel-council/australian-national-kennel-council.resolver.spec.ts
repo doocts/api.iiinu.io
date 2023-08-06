@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AustralianNationalKennelCouncilResolver } from './australian-national-kennel-council.resolver';
+import { AustralianNationalKennelCouncilResolver } from 'src/modules/australian-national-kennel-council';
 
 describe('BreedResolver', () => {
   let resolver: AustralianNationalKennelCouncilResolver;

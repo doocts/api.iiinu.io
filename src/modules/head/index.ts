@@ -1,5 +1,5 @@
-import { HeadEntity } from './head.entity';
-import { HeadModule } from './head.module';
-import { HeadResolver } from './head.resolver';
-import { HeadService } from './head.service';
+import { HeadEntity } from 'src/modules/head/head.entity';
+import { HeadModule } from 'src/modules/head/head.module';
+import { HeadResolver } from 'src/modules/head/head.resolver';
+import { HeadService } from 'src/modules/head/head.service';
 export { HeadEntity, HeadModule, HeadResolver, HeadService };

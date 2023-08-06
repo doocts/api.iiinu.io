@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { AmericanKennelClubResolver } from './american-kennel-club.resolver';
-import { AmericanKennelClubService } from './american-kennel-club.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { AmericanKennelClubResolver } from 'src/modules/american-kennel-club/american-kennel-club.resolver';
+import { AmericanKennelClubService } from 'src/modules/american-kennel-club/american-kennel-club.service';
 
 @Module({
   imports: [PrismaModule],

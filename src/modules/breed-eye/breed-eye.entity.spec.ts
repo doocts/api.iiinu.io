@@ -1,4 +1,4 @@
-import { BreedEyeEntity } from './breed-eye.entity';
+import { BreedEyeEntity } from 'src/modules/breed-eye';
 
 describe('BreedEye', () => {
   it('should be defined', () => {

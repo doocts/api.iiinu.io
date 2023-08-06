@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { SizeEntity, SizeService } from '../size';
-import { localizeEntity } from '../../utils';
+import { SizeEntity, SizeService } from 'src/modules/size';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => SizeEntity)
 export class SizeResolver {

@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { BreedEyeService } from './breed-eye.service';
+import { forwardRef, Module } from '@nestjs/common';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { BreedEyeService } from 'src/modules/breed-eye/breed-eye.service';
 
 @Module({
-  imports: [PrismaModule],
+  imports: [forwardRef(() => PrismaModule)],
   providers: [BreedEyeService],
   exports: [BreedEyeService],
 })

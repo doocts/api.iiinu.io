@@ -1,4 +1,4 @@
-import { StatusEntity } from './status.entity';
+import { StatusEntity } from 'src/modules/status';
 
 describe('Status', () => {
   it('should be defined', () => {

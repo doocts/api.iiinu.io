@@ -1,4 +1,4 @@
-import { EarEntity } from './ear.entity';
+import { EarEntity } from 'src/modules/ear';
 
 describe('Ear', () => {
   it('should be defined', () => {

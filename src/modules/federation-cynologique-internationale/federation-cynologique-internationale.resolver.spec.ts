@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { FederationCynologiqueInternationaleResolver } from './federation-cynologique-internationale.resolver';
+import { FederationCynologiqueInternationaleResolver } from 'src/modules/federation-cynologique-internationale';
 
 describe('FederationCynologiqueInternationaleResolver', () => {
   let resolver: FederationCynologiqueInternationaleResolver;

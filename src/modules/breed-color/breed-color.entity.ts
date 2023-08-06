@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { BreedEntity } from '../breed';
-import { ColorEntity } from '../color';
+import { BreedEntity } from 'src/modules/breed';
+import { ColorEntity } from 'src/modules/color';
 
 @ObjectType()
 export class BreedColorEntity {

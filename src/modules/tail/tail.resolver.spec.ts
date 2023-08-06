@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TailResolver } from './tail.resolver';
+import { TailResolver } from 'src/modules/tail';
 
 describe('TailResolver', () => {
   let resolver: TailResolver;

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { EyeResolver } from './eye.resolver';
+import { EyeResolver } from 'src/modules/eye';
 
 describe('EyeResolver', () => {
   let resolver: EyeResolver;

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { BodyResolver } from './body.resolver';
+import { BodyResolver } from 'src/modules/body';
 
 describe('BodyResolver', () => {
   let resolver: BodyResolver;

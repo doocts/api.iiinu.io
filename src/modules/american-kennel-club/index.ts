@@ -1,7 +1,7 @@
-import { AmericanKennelClubEntity } from './american-kennel-club.entity';
-import { AmericanKennelClubModule } from './american-kennel-club.module';
-import { AmericanKennelClubResolver } from './american-kennel-club.resolver';
-import { AmericanKennelClubService } from './american-kennel-club.service';
+import { AmericanKennelClubEntity } from 'src/modules/american-kennel-club/american-kennel-club.entity';
+import { AmericanKennelClubModule } from 'src/modules/american-kennel-club/american-kennel-club.module';
+import { AmericanKennelClubResolver } from 'src/modules/american-kennel-club/american-kennel-club.resolver';
+import { AmericanKennelClubService } from 'src/modules/american-kennel-club/american-kennel-club.service';
 export {
   AmericanKennelClubEntity,
   AmericanKennelClubModule,

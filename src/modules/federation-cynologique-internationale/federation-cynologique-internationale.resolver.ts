@@ -10,8 +10,8 @@ import { forwardRef, Inject } from '@nestjs/common';
 import {
   FederationCynologiqueInternationaleEntity,
   FederationCynologiqueInternationaleService,
-} from '../federation-cynologique-internationale';
-import { localizeEntity } from '../../utils';
+} from 'src/modules/federation-cynologique-internationale';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => FederationCynologiqueInternationaleEntity)
 export class FederationCynologiqueInternationaleResolver {

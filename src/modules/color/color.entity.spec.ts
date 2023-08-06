@@ -1,4 +1,4 @@
-import { ColorEntity } from './color.entity';
+import { ColorEntity } from 'src/modules/color';
 
 describe('Color', () => {
   it('should be defined', () => {

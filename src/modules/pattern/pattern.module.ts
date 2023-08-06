@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { PatternResolver } from './pattern.resolver';
-import { PatternService } from './pattern.service';
-import { BreedPatternModule } from '../breed-pattern';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { PatternResolver } from 'src/modules/pattern/pattern.resolver';
+import { PatternService } from 'src/modules/pattern/pattern.service';
+import { BreedPatternModule } from 'src/modules/breed-pattern/breed-pattern.module';
 
 @Module({
   imports: [BreedPatternModule, PrismaModule],

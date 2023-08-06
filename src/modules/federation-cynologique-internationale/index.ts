@@ -1,7 +1,7 @@
-import { FederationCynologiqueInternationaleEntity } from './federation-cynologique-internationale.entity';
-import { FederationCynologiqueInternationaleModule } from './federation-cynologique-internationale.module';
-import { FederationCynologiqueInternationaleResolver } from './federation-cynologique-internationale.resolver';
-import { FederationCynologiqueInternationaleService } from './federation-cynologique-internationale.service';
+import { FederationCynologiqueInternationaleEntity } from 'src/modules/federation-cynologique-internationale/federation-cynologique-internationale.entity';
+import { FederationCynologiqueInternationaleModule } from 'src/modules/federation-cynologique-internationale/federation-cynologique-internationale.module';
+import { FederationCynologiqueInternationaleResolver } from 'src/modules/federation-cynologique-internationale/federation-cynologique-internationale.resolver';
+import { FederationCynologiqueInternationaleService } from 'src/modules/federation-cynologique-internationale/federation-cynologique-internationale.service';
 export {
   FederationCynologiqueInternationaleEntity,
   FederationCynologiqueInternationaleModule,

@@ -10,7 +10,7 @@ import { forwardRef, Inject } from '@nestjs/common';
 import {
   AustralianNationalKennelCouncilEntity,
   AustralianNationalKennelCouncilService,
-} from '../australian-national-kennel-council';
+} from 'src/modules/australian-national-kennel-council';
 
 @Resolver(() => AustralianNationalKennelCouncilEntity)
 export class AustralianNationalKennelCouncilResolver {

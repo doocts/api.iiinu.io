@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { StatusResolver } from './status.resolver';
-import { StatusService } from './status.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { StatusResolver } from 'src/modules/status/status.resolver';
+import { StatusService } from 'src/modules/status/status.service';
 
 @Module({
   imports: [PrismaModule],

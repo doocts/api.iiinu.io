@@ -7,14 +7,14 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { BreedEntity, BreedService } from '../breed';
-import { BreedColorService } from '../breed-color';
-import { BreedEyeService } from '../breed-eye';
-import { BreedPatternService } from '../breed-pattern';
-import { ColorConnection } from '../color';
-import { EyeConnection } from '../eye';
-import { PatternConnection } from '../pattern';
-import { localizeEntity, mapToEdge } from '../../utils';
+import { BreedEntity, BreedService } from 'src/modules/breed';
+import { BreedColorService } from 'src/modules/breed-color';
+import { BreedEyeService } from 'src/modules/breed-eye';
+import { BreedPatternService } from 'src/modules/breed-pattern';
+import { ColorConnection } from 'src/modules/color';
+import { EyeConnection } from 'src/modules/eye';
+import { PatternConnection } from 'src/modules/pattern';
+import { localizeEntity, mapToEdge } from 'src/utils';
 
 @Resolver(() => BreedEntity)
 export class BreedResolver {

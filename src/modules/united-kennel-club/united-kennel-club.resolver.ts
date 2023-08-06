@@ -10,8 +10,8 @@ import { forwardRef, Inject } from '@nestjs/common';
 import {
   UnitedKennelClubEntity,
   UnitedKennelClubService,
-} from '../united-kennel-club';
-import { localizeEntity } from '../../utils';
+} from 'src/modules/united-kennel-club';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => UnitedKennelClubEntity)
 export class UnitedKennelClubResolver {

@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { HeadEntity, HeadService } from '../head';
-import { localizeEntity } from '../../utils';
+import { HeadEntity, HeadService } from 'src/modules/head';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => HeadEntity)
 export class HeadResolver {

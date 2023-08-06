@@ -1,5 +1,5 @@
-import { EarEntity } from './ear.entity';
-import { EarModule } from './ear.module';
-import { EarResolver } from './ear.resolver';
-import { EarService } from './ear.service';
+import { EarEntity } from 'src/modules/ear/ear.entity';
+import { EarModule } from 'src/modules/ear/ear.module';
+import { EarResolver } from 'src/modules/ear/ear.resolver';
+import { EarService } from 'src/modules/ear/ear.service';
 export { EarEntity, EarModule, EarResolver, EarService };

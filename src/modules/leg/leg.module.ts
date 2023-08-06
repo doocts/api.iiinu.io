@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '../../prisma';
-import { LegResolver } from './leg.resolver';
-import { LegService } from './leg.service';
+import { PrismaModule } from 'src/prisma/prisma.module';
+import { LegResolver } from 'src/modules/leg/leg.resolver';
+import { LegService } from 'src/modules/leg/leg.service';
 
 @Module({
   imports: [PrismaModule],

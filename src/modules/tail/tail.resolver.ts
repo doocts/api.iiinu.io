@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { TailEntity, TailService } from '../tail';
-import { localizeEntity } from '../../utils';
+import { TailEntity, TailService } from 'src/modules/tail';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => TailEntity)
 export class TailResolver {

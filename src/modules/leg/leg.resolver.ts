@@ -7,8 +7,8 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { LegEntity, LegService } from '../leg';
-import { localizeEntity } from '../../utils';
+import { LegEntity, LegService } from 'src/modules/leg';
+import { localizeEntity } from 'src/utils';
 
 @Resolver(() => LegEntity)
 export class LegResolver {

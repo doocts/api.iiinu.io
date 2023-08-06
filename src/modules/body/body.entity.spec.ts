@@ -1,7 +1,7 @@
-import { Body } from './body.entity';
+import { BodyEntity } from 'src/modules/body';
 
 describe('Body', () => {
   it('should be defined', () => {
-    expect(new Body()).toBeDefined();
+    expect(new BodyEntity()).toBeDefined();
   });
 });

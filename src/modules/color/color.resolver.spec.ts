@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ColorResolver } from './color.resolver';
+import { ColorResolver } from 'src/modules/color';
 
 describe('ColorResolver', () => {
   let resolver: ColorResolver;

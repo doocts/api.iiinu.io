@@ -7,10 +7,10 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { ColorEntity, ColorService } from '../color';
-import { BreedColorService } from '../breed-color';
-import { BreedConnection } from '../breed';
-import { localizeEntity, mapToBreedEntity } from '../../utils';
+import { ColorEntity, ColorService } from 'src/modules/color';
+import { BreedColorService } from 'src/modules/breed-color';
+import { BreedConnection } from 'src/modules/breed';
+import { localizeEntity, mapToBreedEntity } from 'src/utils';
 
 @Resolver(() => ColorEntity)
 export class ColorResolver {

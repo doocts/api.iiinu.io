@@ -7,10 +7,10 @@ import {
   ResolveField,
 } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
-import { PatternEntity, PatternService } from '../pattern';
-import { BreedPatternService } from '../breed-pattern';
-import { BreedConnection } from '../breed';
-import { localizeEntity, mapToBreedEntity } from '../../utils';
+import { PatternEntity, PatternService } from 'src/modules/pattern';
+import { BreedPatternService } from 'src/modules/breed-pattern';
+import { BreedConnection } from 'src/modules/breed';
+import { localizeEntity, mapToBreedEntity } from 'src/utils';
 
 @Resolver(() => PatternEntity)
 export class PatternResolver {
