@@ -1,4 +1,4 @@
-![Iiinu API](./logo.png)
+![Iiinu API](./docs/logo.png)
 
 <h1 align="center">Iiinu GraphQL API</h1>
 
@@ -78,4 +78,4 @@ query {
 
 ---
 
-<a href="https://doocts.com" title="Doocts Inc"><img src="./doocts.png" alt="Powered by Doocts Inc" width="200"/></a>
+<a href="https://doocts.com" title="Doocts Inc"><img src="./docs/doocts.png" alt="Powered by Doocts Inc" width="200"/></a>
